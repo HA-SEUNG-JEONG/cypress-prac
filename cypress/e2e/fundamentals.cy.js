@@ -1,7 +1,9 @@
 describe("Fundamental test", () => {
-    it.only("Contains correct header text", () => {
+    beforeEach(() => {
         cy.visit("/fundamentals");
-        cy.get('[data-test="fundamentals-header"]').should(
+    });
+    it("Contains correct header text", () => {
+        cy.getDataTest("fundamentals-header").should(
             "contain.text",
             "Testing Fundamentals"
         );
